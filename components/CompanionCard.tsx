@@ -1,7 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import { Button } from "./ui/button";
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import { Button } from './ui/button';
 
 interface CompanionCardProps {
   id?: string;
@@ -24,7 +24,7 @@ const CompanionCard = ({
       <div className="flex justify-between items-center">
         <div className="subject-badge">{subject}</div>
         <button className="companion-bookmark">
-          <Image alt="" src={"/icons/bookmark.svg"} width={12.5} height={15} />
+          <Image alt="" src={'/icons/bookmark.svg'} width={12.5} height={15} />
         </button>
       </div>
 
@@ -33,7 +33,7 @@ const CompanionCard = ({
       <div className="flex items-center gap-2">
         <Image
           alt="duration"
-          src={"icons/clock.svg"}
+          src={'icons/clock.svg'}
           width={13.5}
           height={13.5}
         />
@@ -42,7 +42,6 @@ const CompanionCard = ({
 
       <Link href={`/companions/${id}`} className="w-full">
         <Button className="btn-primary w-full justify-center">
-          {" "}
           Lunach Lesson
         </Button>
       </Link>
