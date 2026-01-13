@@ -6,6 +6,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import soundwaves from '../constants/soundwaves.json';
 import { content } from '@/tailwind.config';
+import { addToSessionHistory } from '@/lib/actions/companion.actions';
 
 enum CallStatus {
   INACTIVE = 'INACTIVE',
@@ -42,7 +43,10 @@ const CompanionComponent = ({
 
   useEffect(() => {
     const onCallStart = () => setCallState(CallStatus.ACTIVE);
-    const oneCallEnd = () => setCallState(CallStatus.ENDED);
+    const oneCallEnd = () => {
+      setCallState(CallStatus.ENDED);
+      addToSessionHistory(companionId);
+    };
     const onMessage = (message: Message) => {
       if (message.type === 'transcript' && message.transcriptType === 'final') {
         const newMessage = { role: message.role, content: message.transcript };
@@ -107,7 +111,7 @@ const CompanionComponent = ({
           >
             <div
               className={cn(
-                'absolute transition-opacity duration-1000',
+                'absolute   transition-opacity duration-1000',
                 callState === CallStatus.ENDED ||
                   callState === CallStatus.INACTIVE
                   ? 'opacity-100'
@@ -188,7 +192,7 @@ const CompanionComponent = ({
         </div>
       </section>
 
-      <section className="transcript">
+      <section className="">
         <div className="transcript-message no-scrollbar">
           {messages.map((message, index) => {
             if (message.role === 'assistant') {

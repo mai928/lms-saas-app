@@ -21,7 +21,7 @@ const SearchInput = () => {
         });
         router.push(newUrl, { scroll: false });
       } else {
-        if (pathName === '/companions') {
+        if (pathName === '/companions' || pathName === '/') {
           const newUrl = removeKeysFromUrlQuery({
             params: searchParams.toString(),
             keysToRemove: ['topic'],
@@ -35,12 +35,12 @@ const SearchInput = () => {
   }, [searchQuery, searchParams, pathName, router]);
 
   return (
-    <div className="relative border  border-black rounded-lg flex gap-2 px-2 py-1 h-fit items-center">
+    <div className="relative border  border-gray-100 shadow-sm rounded-lg flex gap-2 ps-2 pe-12 py-2 h-fit items-center bg-white">
       <Image src={'/icons/search.svg'} height={15} width={15} alt="search" />
 
       <input
         type="text"
-        placeholder="Search Companions..."
+        placeholder="Search Companions  . . . . . . "
         className="outline-none"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}

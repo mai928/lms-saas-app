@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Table,
   TableBody,
@@ -7,10 +7,10 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { cn, getSubjectColor } from "@/lib/utils";
-import Link from "next/link";
-import Image from "next/image";
+} from '@/components/ui/table';
+import { cn, getSubjectColor } from '@/lib/utils';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface CompanionListProps {
   title: string;
@@ -24,9 +24,9 @@ const CompanionList = ({
   className,
 }: CompanionListProps) => {
   return (
-    <article className={cn("companion-list", className)}>
-      <h2 className="font-bold text-3xl">Recent Sessions</h2>
-      <Table>
+    <article className={cn('companion-list', className)}>
+      <h2 className="font-bold text-3xl">{title}</h2>
+      <Table className="mt-4">
         <TableHeader>
           <TableRow>
             <TableHead className="text-lg w-2/3">Lessons</TableHead>
@@ -40,7 +40,7 @@ const CompanionList = ({
             <TableRow key={id}>
               <TableCell>
                 <Link href={`/companions/${id}`}>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-5">
                     <div
                       className="size-[72px] flex items-center justify-center rounded-lg max-md:hidden"
                       style={{
@@ -50,14 +50,14 @@ const CompanionList = ({
                       <Image
                         alt={subject}
                         src={`/icons/${subject}.svg`}
-                        width={35}
-                        height={35}
+                        width={30}
+                        height={30}
                       />
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      <p className="font-bold text-2xl">{name}</p>
-                      <p className="text-lg">{topic}</p>
+                      <p className="font-bold text-2xl capitalize">{name}</p>
+                      <p className="text-sm text-gray-600">{topic}</p>
                     </div>
                   </div>
                 </Link>
@@ -68,15 +68,15 @@ const CompanionList = ({
                   {subject}
                 </div>
                 <div
-                  className="flex items-center justify-center rounded-lg  w-fit p-2 md:hidden"
+                  className="flex items-center justify-center gap-3 rounded-lg  w-fit p-2 md:hidden"
                   style={{ backgroundColor: getSubjectColor(subject) }}
                 >
-                  {" "}
+                  {' '}
                   <Image
                     alt={subject}
                     src={`/icons/${subject}.svg`}
-                    width={18}
-                    height={18}
+                    width={16}
+                    height={16}
                   />
                 </div>
               </TableCell>

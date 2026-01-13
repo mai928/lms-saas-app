@@ -23,8 +23,8 @@ const CompanionSessions = async ({ params }: CompanionSessionPageProps) => {
   if (!name) redirect('/companions');
 
   return (
-    <main>
-      <article className="flex rounded-border justify-between p-6 max-md:flex-col ">
+    <section className="w-full">
+      <article className="flex w-full border border-gray-200 shadow-md rounded-2xl justify-between p-6 max-md:flex-col my-3 ">
         <div className="flex items-center gap-2">
           <div
             className="size-[72px] flex items-center  justify-center rounded-lg  max-md:hidden"
@@ -56,7 +56,7 @@ const CompanionSessions = async ({ params }: CompanionSessionPageProps) => {
         userName={user.firstName!}
         userImage={user.imageUrl!}
       />
-    </main>
+    </section>
   );
 };
 
