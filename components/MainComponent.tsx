@@ -23,7 +23,10 @@ const MainComponent = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <ClerkProvider appearance={{ variables: { colorPrimary: '#fe5933' } }}>
+    <ClerkProvider
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+      appearance={{ variables: { colorPrimary: '#fe5933' } }}
+    >
       <div className="flex h-screen bg-[#fff4f3]   overflow-hidden">
         {/* Sidebar */}
         <SideBar isopen={isopen} />
