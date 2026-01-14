@@ -18,7 +18,7 @@ const Navbar = ({
   return (
     <nav className={`navbar ${isopen ? 'px-[2.8rem] ' : 'px-[6rem] '} `}>
       <div className="flex gap-3">
-        {pathname === '/' && <SearchInput />}
+        {/* {pathname === '/' && <SearchInput />} */}
         {isopen ? (
           <Image
             onClick={onMenuToggle}

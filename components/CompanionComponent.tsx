@@ -15,6 +15,8 @@ enum CallStatus {
   ENDED = 'ENDED',
 }
 
+export const dynamic = 'force-dynamic';
+
 const CompanionComponent = ({
   companionId,
   subject,

@@ -12,6 +12,7 @@ interface CompanionSessionPageProps {
 
 // params   /url/{id}
 // Search Params  /url?subject=math&topic=algebra
+export const dynamic = 'force-dynamic';
 
 const CompanionSessions = async ({ params }: CompanionSessionPageProps) => {
   const { id } = await params;

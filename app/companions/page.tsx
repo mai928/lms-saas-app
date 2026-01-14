@@ -1,9 +1,11 @@
 import CompanionCard from '@/components/CompanionCard';
-import SearchInput from '@/components/SearchInput';
-import SubjectFilter from '@/components/SubjectFilter';
 import { getAllCompanions } from '@/lib/actions/companion.actions';
 import { getSubjectColor } from '@/lib/utils';
 import React from 'react';
+
+import CompanionLibraryClient from '@/components/CompanionLibraryClient';
+
+export const dynamic = 'force-dynamic';
 
 const CompanionLibrary = async ({ searchParams }: SearchParams) => {
   const filters = await searchParams;
@@ -14,27 +16,7 @@ const CompanionLibrary = async ({ searchParams }: SearchParams) => {
   const companions = await getAllCompanions({ subject, topic });
   // console.log(companions);
 
-  return (
-    <section className=" my-5 border-2 border-gray-50 rounded-lg  p-5 shadow-sm">
-      <section className="flex justify-between gap-4 max-sm:flex-col ">
-        <h1 className="text-2xl font-bold mb-4">Companion Library</h1>
-        <div className="flex gap-4 items-center mb-5">
-          <SearchInput />
-          <SubjectFilter />
-        </div>
-      </section>
-
-      <section className="companions-grid">
-        {companions.map((companion) => (
-          <CompanionCard
-            key={companion.id}
-            {...companion}
-            color={getSubjectColor(companion.subject)}
-          />
-        ))}
-      </section>
-    </section>
-  );
+  return <CompanionLibraryClient companions={companions} />;
 };
 
 export default CompanionLibrary;

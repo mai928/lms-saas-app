@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'; // To detect active page
 import React, { useEffect, useState } from 'react';
 
 const SideBar = ({ isopen }: { isopen: boolean }) => {
-  console.log('Sidebar render - isopen:', isopen);
+  // console.log('Sidebar render - isopen:', isopen);
   const pathname = usePathname();
 
   const navItems = [

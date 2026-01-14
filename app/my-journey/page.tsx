@@ -14,6 +14,8 @@ import Image from 'next/image';
 import { redirect } from 'next/navigation';
 import React from 'react';
 
+export const dynamic = 'force-dynamic';
+
 const ProfilePage = async () => {
   const user = await currentUser();
   if (!user) redirect('/sign-in');
