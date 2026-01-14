@@ -16,7 +16,7 @@ const Navbar = ({
   const pathname = usePathname();
 
   return (
-    <nav className={`navbar ${isopen ? 'px-[2.8rem] ' : 'px-[6rem] '} `}>
+    <nav className={`flex justify-end gap-3 mt-5  px-2 lg:px-24`}>
       <div className="flex gap-3">
         {/* {pathname === '/' && <SearchInput />} */}
         {isopen ? (

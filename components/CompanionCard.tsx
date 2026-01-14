@@ -32,14 +32,14 @@ const CompanionCard = ({
       <div className="flex gap-3 items-stretch ">
         <div className=" border-r-4 border-orange-400 " />
         <div>
-          <h2 className="text-2xl font-bold capitalize ">{name}</h2>
+          <h2 className="lg:text-2xl text-lg  font-bold capitalize ">{name}</h2>
           <p className="text-xs w-72 text-gray-500">{topic}</p>
         </div>
       </div>
 
       <div className="w-[90%] border-b-2 border-gray-100  m-auto my-2" />
 
-      <div className="flex justify-between ">
+      <div className="flex-col flex  lg:flex-row justify-between ">
         <div className="flex items-center gap-1">
           <Image
             alt="duration"

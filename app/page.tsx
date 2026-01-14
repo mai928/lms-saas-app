@@ -15,8 +15,8 @@ const Page = async () => {
   const recentSessionCompanions = await getRecentSessions(10);
 
   return (
-    <div className="flex flex-col gap-8  mx-auto  max-sm:px-2">
-      <h1 className="">Popular Companions</h1>
+    <div className="flex flex-col gap-8   max-sm:px-2">
+      <h1 className="lg:text-3xl text-2xl ">Popular Companions</h1>
       <section className="home-section">
         {companions.map((companion) => (
           <CompanionCard

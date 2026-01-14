@@ -27,12 +27,12 @@ const MainComponent = ({ children }: { children: React.ReactNode }) => {
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
       appearance={{ variables: { colorPrimary: '#fe5933' } }}
     >
-      <div className="flex h-screen bg-[#fff4f3]   overflow-hidden">
+      <div className="flex h-screen bg-[#fff4f3] relative  overflow-hidden">
         {/* Sidebar */}
         <SideBar isopen={isopen} />
 
         {/* Main Content */}
-        <div className="flex flex-col flex-1 overflow-y-auto custom-scrollbar min-w-0 transition-all duration-300 ease-in-out">
+        <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden custom-scrollbar min-w-0 transition-all duration-300 ease-in-out">
           <Navbar onMenuToggle={() => setIsopen(!isopen)} isopen={isopen} />
 
           <main className="flex-1 py-4 w-full">{children}</main>

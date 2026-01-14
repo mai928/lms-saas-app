@@ -25,7 +25,7 @@ const CompanionList = ({
 }: CompanionListProps) => {
   return (
     <article className={cn('companion-list', className)}>
-      <h2 className="font-bold text-3xl">{title}</h2>
+      <h2 className="font-bold  text-xl lg:text-3xl">{title}</h2>
       <Table className="mt-4">
         <TableHeader>
           <TableRow>
@@ -56,7 +56,9 @@ const CompanionList = ({
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      <p className="font-bold text-2xl capitalize">{name}</p>
+                      <p className="font-bold text-xl lg:text-2xl capitalize">
+                        {name}
+                      </p>
                       <p className="text-sm text-gray-600">{topic}</p>
                     </div>
                   </div>

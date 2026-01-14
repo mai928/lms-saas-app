@@ -92,6 +92,7 @@
 body {
   font-family: var(--font-bricolage);
   background-color: #fff4f3;
+  overflow-x: hidden;
 }
 
 .dark {
@@ -182,7 +183,7 @@ body {
     @apply bg-cta-gold rounded-4xl px-5 py-1.5 text-sm text-black;
   }
   .btn-wrapper {
-    @apply bg-yellow-400! rounded-full! cursor-pointer px-4 py-2  flex items-center gap-2;
+    @apply lg:my-0 my-3 bg-yellow-400! rounded-full! cursor-pointer lg:px-4 px-2 py-2  flex items-center  lg:gap-2;
   }
   .btn-primary {
     @apply text-gray-800! text-xs!;

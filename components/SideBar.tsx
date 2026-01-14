@@ -56,11 +56,11 @@ const SideBar = ({ isopen }: { isopen: boolean }) => {
   return (
     <div
       className={`
-        transition-all duration-300 ease-in-out h-full flex-shrink-0
+        transition-all duration-300 ease-in-out h-full flex-shrink-0 z-50
         ${
           isopen
-            ? 'w-24 opacity-100'
-            : 'w-0 opacity-0 overflow-hidden pointer-events-none'
+            ? '  absolute start-0  '
+            : 'w-0  overflow-hidden pointer-events-none'
         }
         
      
